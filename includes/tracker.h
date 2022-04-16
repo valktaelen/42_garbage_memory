@@ -6,7 +6,7 @@
 /*   By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 03:46:23 by aartiges &        #+#    #+#             */
-/*   Updated: 2022/04/16 03:47:40 by aartiges &       ###   ########lyon.fr   */
+/*   Updated: 2022/04/16 05:35:43 by aartiges &       ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 # define TRACKER_H
 
-# define DEBUG_TRACK 1
-
 # include <stdio.h>
 
-typedef struct s_track	t_track;
+// Print debug in case of error
 
+# define DEBUG_TRACK 1
+
+// List of element track
+
+typedef struct s_track	t_track;
 struct s_track
 {
 	void	*ptr;

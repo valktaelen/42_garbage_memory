@@ -6,7 +6,7 @@
 /*   By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 03:46:26 by aartiges &        #+#    #+#             */
-/*   Updated: 2022/04/16 03:46:27 by aartiges &       ###   ########lyon.fr   */
+/*   Updated: 2022/04/16 05:01:20 by aartiges &       ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "tracker.h"
+
+# define ERR_ALLOC "Warning: tracker can't allocate, the pointer pass is free\n"
 
 // Utils
 

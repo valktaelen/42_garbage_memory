@@ -6,12 +6,18 @@
 /*   By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 03:46:08 by aartiges &        #+#    #+#             */
-/*   Updated: 2022/04/16 03:46:11 by aartiges &       ###   ########lyon.fr   */
+/*   Updated: 2022/04/16 05:19:19 by aartiges &       ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/tracker_private.h"
 
+/**
+ * @brief as bzero
+ * 
+ * @param s pointer
+ * @param n size to write
+ */
 void	ft_util_track_bzero(void *s, size_t n)
 {
 	unsigned char	*ps;
@@ -24,6 +30,12 @@ void	ft_util_track_bzero(void *s, size_t n)
 	}
 }
 
+/**
+ * @brief as memalloc
+ * 
+ * @param size size to allocate and to write
+ * @return void* a pointer of the new allocation
+ */
 void	*ft_util_track_memalloc(size_t size)
 {
 	void	*mem;
