@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tracker_private.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+        */
+/*   By: aartiges <aartiges@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 03:46:26 by aartiges &        #+#    #+#             */
-/*   Updated: 2022/04/16 05:01:20 by aartiges &       ###   ########lyon.fr   */
+/*   Updated: 2022/04/21 14:29:16 by aartiges         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ void	ft_lst_track_add(t_track **track, t_track *new_track);
 t_track	*ft_lst_track_new(void *ptr);
 void	ft_lst_track_del(t_track *track);
 void	ft_lst_track_del_ptr(t_track **track, void *ptr);
+void	ft_lst_track_del_ptr_dim(t_track **track, void **ptr, size_t level);
 void	ft_lst_track_del_all(t_track **track);
+
+// unused
+void	ft_lst_track_del_ptr_dim_node(t_track **track, void **ptr,
+			size_t level);
+void	ft_lst_track_del_ptr_node(t_track **track, void *ptr);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   track.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+        */
+/*   By: aartiges <aartiges@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 03:46:03 by aartiges &        #+#    #+#             */
-/*   Updated: 2022/04/16 05:16:40 by aartiges &       ###   ########lyon.fr   */
+/*   Updated: 2022/04/21 14:19:23 by aartiges         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,28 @@ static void	*ft_track_add_ptr(t_track **track, void *ptr)
 	{
 		if (DEBUG_TRACK)
 			write(2, ERR_ALLOC, 59);
-		free(ptr);
+		if (FREE_IF_ERROR)
+			free(ptr);
 		return (NULL);
 	}
 	ft_lst_track_add(track, tmp);
 	return (ptr);
+}
+
+static void	ft_crash(t_track **track, void **ptr, size_t i, size_t level)
+{
+	if (FREE_IF_ERROR)
+	{
+		while (i != 0)
+			ft_lst_track_del_ptr_dim(track, ptr[--i], level - 1);
+		ft_lst_track_del_ptr(track, ptr);
+	}
+	else
+	{
+		while (i != 0)
+			ft_lst_track_del_ptr_dim_node(track, ptr[--i], level - 1);
+		ft_lst_track_del_ptr_node(track, ptr);
+	}
 }
 
 /**
@@ -85,8 +102,7 @@ void	*ft_track_dim(t_track **track, void **ptr, size_t level)
 	{
 		if (!ft_track_dim(track, (void **)ptr[i++], level - 1))
 		{
-			while (i != 0)
-				ft_lst_track_del_ptr(track, ptr[--i]);
+			ft_crash(track, ptr, i, level);
 			return (NULL);
 		}
 	}

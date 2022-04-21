@@ -50,6 +50,17 @@ de toutes les dimensions***
 ***Donc dans le cas d'un split par exemple, s'il on veut free une ligne, il faudra la free avec le tracker avec `ft_track_free` ou `ft_track_dim_free` ou ne pas le free du tout et laisser `ft_track_free_all` de fin tout régler***
 *(pas propre mais fonctionnel)*.
 
+
+#### Avertissement
+
+Par defaut, la fonction `ft_track_dim` retourne `NULL` si l'allocation du tracker échou
+ou si le pointeur passé est `NULL`.
+Dans le cas, d'une erreur d'allocation du tracker, **le pointeur est également free**.
+
+Si l'on veut qu'en cas d'erreur d'allocation du tracker, le pointeur ne soit pas free.
+Il faut changer le define `FREE_IF_ERROR` à 0.
+
+
 ## Prototypes
 
 ### Track

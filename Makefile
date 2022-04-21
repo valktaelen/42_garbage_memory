@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+         #
+#    By: aartiges <aartiges@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 16:27:10 by aartiges &        #+#    #+#              #
-#    Updated: 2022/04/16 03:48:39 by aartiges &       ###   ########lyon.fr    #
+#    Updated: 2022/04/21 14:28:25 by aartiges         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,10 @@ RELATIVE_HDS		=	tracker.h			\
 # Code
 
 DIR_GLOBAL						=	srcs
-SRC_GLOBAL						=	free.c	\
-									list.c	\
-									track.c	\
+SRC_GLOBAL						=	free.c		\
+									free_dim.c	\
+									list.c		\
+									track.c		\
 									utils.c
 
 ################################################################################

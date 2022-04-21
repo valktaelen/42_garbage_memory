@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tracker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aartiges & jmilhas <@student.42lyon.fr>    +#+  +:+       +#+        */
+/*   By: aartiges <aartiges@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 03:46:23 by aartiges &        #+#    #+#             */
-/*   Updated: 2022/04/16 05:35:43 by aartiges &       ###   ########lyon.fr   */
+/*   Updated: 2022/04/21 14:23:22 by aartiges         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 // Print debug in case of error
 
 # define DEBUG_TRACK 1
+
+// Free pointer if error of allocation of a tacker node
+
+# define FREE_IF_ERROR 1
 
 // List of element track
 
