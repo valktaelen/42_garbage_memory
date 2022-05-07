@@ -6,7 +6,7 @@
 #    By: aartiges <aartiges@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 16:27:10 by aartiges &        #+#    #+#              #
-#    Updated: 2022/04/21 14:28:25 by aartiges         ###   ########lyon.fr    #
+#    Updated: 2022/05/07 16:53:45 by aartiges         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ clean:
 	@printf "\tDelete $(COLOR_RED)object of $(DIR_OBJ)$(COLOR_NORM) of $(NAME)\n"
 	@rm -rf $(DIR_OBJ)
 
-fclean:	clean
+fclean:	clean ftest
 	@printf "\tDelete $(COLOR_RED)$(NAME)$(COLOR_NORM)\n"
 	@rm -rf $(NAME)
 
@@ -93,3 +93,13 @@ re:	fclean all
 
 norm:
 	@norminette	$(HDS) $(SRCS) $(SRCS_BONUS) || true
+
+test: all
+	make -C test_src/libft/code
+	$(CC) $(CFLAGS) -o test test_src/main.c -Ltest_src/libft/code -lft -L. -ltrack -fsanitize=address
+
+ftest: fclean
+	make -C test_src/libft/code fclean
+	rm -rf test
+
+retest: ftest test
