@@ -41,19 +41,19 @@ int	main(void)
 }
 ```
 
-Le define `DEBUG_TRACK` dans le `tracker.h` permet de montrer d'éventuel erreurs
+Le define `DEBUG_TRACK` dans le [`tracker.h`](code/../includes/tracker.h) permet de montrer d'éventuel erreurs
 lors de l'utilisation du tracker.
 
 ***L'utilisation du tracker sur plusieurs dimensions ajoute les pointeurs
 de toutes les dimensions***
 
-***Donc dans le cas d'un split par exemple, s'il on veut free une ligne, il faudra la free avec le tracker avec `ft_track_free` ou `ft_track_dim_free` ou ne pas le free du tout et laisser `ft_track_free_all` de fin tout régler***
+***Donc dans le cas d'un split par exemple, s'il on veut free une ligne, il faudra la free avec le tracker avec [`ft_track_free`](srcs/free.c) ou [`ft_track_dim_free`](srcs/free_dim.c) ou ne pas le free du tout et laisser [`ft_track_free_all`](srcs/free.c) de fin tout régler***
 *(pas propre mais fonctionnel)*.
 
 
 #### Avertissement
 
-Par defaut, la fonction `ft_track_dim` retourne `NULL` si l'allocation du tracker échou
+Par defaut, la fonction [`ft_track_dim`](srcs/track.c) retourne `NULL` si l'allocation du tracker échou
 ou si le pointeur passé est `NULL`.
 Dans le cas, d'une erreur d'allocation du tracker, **le pointeur est également free**.
 
