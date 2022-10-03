@@ -85,7 +85,7 @@ clean:
 	@printf "\tDelete $(COLOR_RED)object of $(DIR_OBJ)$(COLOR_NORM) of $(NAME)\n"
 	@rm -rf $(DIR_OBJ)
 
-fclean:	clean ftest
+fclean:	clean
 	@printf "\tDelete $(COLOR_RED)$(NAME)$(COLOR_NORM)\n"
 	@rm -rf $(NAME)
 
@@ -93,13 +93,3 @@ re:	fclean all
 
 norm:
 	@norminette	$(HDS) $(SRCS) $(SRCS_BONUS) || true
-
-test: all
-	make -C test_src/libft/code
-	$(CC) $(CFLAGS) -o test test_src/main.c -Ltest_src/libft/code -lft -L. -ltrack -fsanitize=address
-
-ftest: fclean
-	make -C test_src/libft/code fclean
-	rm -rf test
-
-retest: ftest test
