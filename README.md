@@ -1,4 +1,4 @@
-# Tracker
+# Tracker à la norme
 
 ## Un tracker, pourquoi?
 
@@ -15,8 +15,8 @@ make
 
 - Compilation
 
-```Makefile
-LIB_TRACKER	=	-Ltracker -ltracker
+```md
+LIB_TRACKER	:=	-Ltracker -ltracker
 $(CC) $(CFLAGS) $(LIB_TRACKER) ## and your main / objects  ... ##
 ```
 
