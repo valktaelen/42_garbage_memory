@@ -72,7 +72,7 @@ define src2obj
 $(DIR_OBJ)/$(1)/%.o:	$(1)/%.c $(2)
 	@mkdir -p $(DIR_OBJ)/$(1)
 	@printf "\r\033[K\tCompilation of $(COLOR_PURPLE)$$< ==> $$@\$(COLOR_NORM)"
-	$(CC) $(CFLAGS) -c -o $$@ $$< $(INC_INC)
+	@$(CC) $(CFLAGS) -c -o $$@ $$< $(INC_INC)
 endef
 
 $(foreach dir,$(DIRS_SRC),$(eval $(call src2obj,$(dir), $(DEPENDS))))
