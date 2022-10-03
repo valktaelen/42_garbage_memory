@@ -8,7 +8,6 @@
 *.o
 *.out
 *.dSYM
-cub3D
 
 # Extern dir - tests
 .DS_Store
